@@ -18,7 +18,7 @@ for (const file of commandFiles) {
 
 function handleCommand(msg, prefix) {
     const commandName = msg.content
-        .substring(prefix.length, msg.content.length) // slice(prefix.length)
+        .slice(prefix.length)
         .split(' ')[0];
     
     const command = bot.commands.get(commandName);

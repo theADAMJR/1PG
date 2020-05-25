@@ -11,12 +11,20 @@ bot.on('ready', () => console.log('Bot is live! :)'));
 bot.on('message', async(msg) => {
     if (!msg.guild) return;
 
-    const savedGuild = await guilds.get(msg.guild.id);
+    const savedGuild = await guilds.get(msg.guild);
 
     const prefix = savedGuild.general.prefix;
     if (msg.content.startsWith(prefix))
-        handleCommand(msg, prefix);
+        return handleCommand(msg, prefix);
+
+    await logUserMessage(msg.member);
 });
+
+async function logUserMessage(member) {
+    const savedMember = await members.get(member);
+    savedMember.messages++;
+    await savedMember.save();
+}
 
 bot.login(config.token);
 
