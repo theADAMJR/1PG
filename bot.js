@@ -1,44 +1,15 @@
-const config = require('./config.json'),
-      Discord = require('discord.js'),
-      fs = require('fs');
+const { handleCommand } = require('./handlers/command-handler'),
+      config = require('./config.json'),
+      Discord = require('discord.js');
 
 const bot = new Discord.Client();
-
-bot.commands = new Map();
-
-const commandFiles = fs
-    .readdirSync('./commands')
-    .filter(file => file.endsWith('.js'));
-
-for (const file of commandFiles) {
-    const Command = require(`./commands/${file}`);
-    const command = new Command();
-    if (!command.name) continue;
-
-    bot.commands.set(command.name, command);
-}
 
 bot.on('ready', () => console.log('Bot is live!'));
 
 bot.on('message', (msg) => {
     const prefix = '.';
     if (msg.content.startsWith(prefix))
-        handleCommand(msg);
+        handleCommand(msg, prefix);
 });
-
-function handleCommand(msg) {
-    const commandName = msg.content
-        .substring(1, msg.content.length)
-        .split(' ')[0];
-    
-    const command = bot.commands.get(commandName);
-    if (!command) return;
-
-    try {
-        command.execute(msg);
-    } catch (error) {
-        msg.reply(`⚠ ${error}`);
-    }
-}
 
 bot.login(config.token);
