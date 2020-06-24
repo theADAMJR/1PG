@@ -2,7 +2,10 @@ const { handleCommand } = require('./handlers/command-handler'),
       config = require('./config.json'),
       Discord = require('discord.js'),
       guilds = require('./data/guilds'),
+      users = require('./data/users'),
       { connect } = require('mongoose');
+
+require('./dashboard/server');
 
 const bot = new Discord.Client();
 
@@ -17,13 +20,13 @@ bot.on('message', async(msg) => {
     if (msg.content.startsWith(prefix))
         return handleCommand(msg, prefix);
 
-    await logUserMessage(msg.member);
+    await logUserMessage(msg.author);
 });
 
-async function logUserMessage(member) {
-    const savedMember = await members.get(member);
-    savedMember.messages++;
-    await savedMember.save();
+async function logUserMessage(user) {
+    const savedUser = await users.get(user);
+    savedUser.messages++;
+    await savedUser.save();
 }
 
 bot.login(config.token);
