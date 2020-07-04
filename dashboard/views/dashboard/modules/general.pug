@@ -1,6 +1,11 @@
-section#general
-  .form-group.mt-5
-    .row
-      .col-4
-        label Prefix
-        input.form-control(name="prefix", value=savedGuild.general.prefix, type="text")
+form(action='/servers/' + guild.id + '/general?_method=PUT', method="POST")
+  section#general
+    .form-group.mt-5
+      .row
+        .col-4
+          label Prefix
+          input.form-control(name="prefix", value=savedGuild.general.prefix, type="text", required)
+    .d-flex.justify-content-center
+      button.btn.btn-primary
+        i.fas.fa-rocket
+        span.ml-1 Submit

@@ -17,3 +17,8 @@ body
                 img.round(alt=guild._name, src=guild.iconUrl(64))
               else
                 p.text-center.abbr= utils.getAbbreviation(guild.name)
+      .col-2.mb-4.float-left.d-flex.justify-content-center
+        a(href="/invite")
+          .icon.round.shadow
+            p.abbr.text-success.text-center.pr-1
+              i.fas.fa-plus

@@ -1,5 +1,7 @@
-const cookies = require('cookies'),
+const bodyParser = require('body-parser'),
+      cookies = require('cookies'),
       express = require('express'),
+      methodOverride = require('method-override'),
       { setUser, validateUser } = require('./middleware');
 
 const authRoutes = require('./routes/auth-routes'),
@@ -8,15 +10,16 @@ const authRoutes = require('./routes/auth-routes'),
 
 const app = express();
 
-app.use(cookies.express("some", "random", "keys"));
-app.use(setUser)
+app.use(cookies.express('some', 'random', 'keys'));
+app.use(methodOverride('_method'));
+app.use(bodyParser.urlencoded({ extended: true }))
 
 app.set('view engine', 'pug');
 app.set('views', __dirname + '/views')
 
-app.use('/', rootRoutes);
-app.use('/', authRoutes);
-app.use('/', validateUser, dashboardRoutes);
+app.use('/', setUser, rootRoutes);
+app.use('/', setUser, authRoutes);
+app.use('/', dashboardRoutes);
 
 app.get('*', (req, res) => res.render('errors/404'));
 

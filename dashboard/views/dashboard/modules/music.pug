@@ -1,3 +1,8 @@
-section#music
-  .form-group.mt-5
-    p Nothing here yet...
+form(action='/servers/' + guild.id + '/music?_method=PUT', method="POST")
+  section#music
+    .form-group.mt-5
+      p Nothing here yet...
+    .d-flex.justify-content-center
+      button.btn.btn-primary
+        i.fas.fa-rocket
+        span.ml-1 Submit

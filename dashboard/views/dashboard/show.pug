@@ -5,8 +5,8 @@ body
   include ../includes/navbar.pug
   .container.jumbotron.text-center.bg-transparent
     h1.display-4
-      if guild.iconHash
-        img.round.mr-3(src=guild.iconUrl(64))
+      if guild.icon
+        img.guild-icon.round.mr-3(src=guild.iconURL({ dynamic: true, size: 128 }))
       span #{guild.name}
   .container
     ul.nav.nav-tabs
@@ -31,11 +31,10 @@ body
           i.fas.fa-music.mr-2
           span Music
 
-    form(action='/servers/' + guild.id, method="POST")
-      include modules/overview.pug
-      include modules/auto-mod.pug
-      include modules/economy.pug
-      include modules/general.pug
-      include modules/music.pug
+    include modules/overview.pug
+    include modules/auto-mod.pug
+    include modules/economy.pug
+    include modules/general.pug
+    include modules/music.pug
   script
     include ../js/dashboard/show.js

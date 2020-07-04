@@ -1,13 +1,11 @@
 const { handleCommand } = require('./handlers/command-handler'),
       config = require('./config.json'),
-      Discord = require('discord.js'),
+      { Client } = require('discord.js'),
       guilds = require('./data/guilds'),
       users = require('./data/users'),
       { connect } = require('mongoose');
 
-require('./dashboard/server');
-
-const bot = new Discord.Client();
+const bot = new Client();
 
 bot.on('ready', () => console.log('Bot is live! :)'));
 
@@ -36,3 +34,5 @@ connect(config.mongoURL,
     () => console.log('Connected to db! :)'));
 
 module.exports = bot;
+
+require('./dashboard/server');

@@ -1,7 +1,9 @@
 .icon {
   border: 2px solid black;
   font-size: x-large;
-  max-height: 68px;
+
+  height: 68px;
+  width: 68px;  
 }
 
 .abbr {
