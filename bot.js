@@ -29,7 +29,7 @@ async function logUserMessage(user) {
     await savedUser.save();
 }
 
-bot.login(config.token);
+bot.login(config.bot.token);
 
 connect(config.mongoURL,
     { useNewUrlParser: true, useUnifiedTopology: true },

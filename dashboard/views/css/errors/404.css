@@ -1,0 +1,160 @@
+.st0 {
+	 fill-rule: evenodd;
+	 clip-rule: evenodd;
+	 fill: #E8EBED;
+}
+ .st1 {
+	 fill: #FFFFFF;
+	 stroke: #89949B;
+	 stroke-width: 3;
+	 stroke-linecap: round;
+	 stroke-linejoin: round;
+	 stroke-miterlimit: 10;
+}
+ .st2 {
+	 fill-rule: evenodd;
+	 clip-rule: evenodd;
+	 fill: #DBDFE1;
+}
+ .st3 {
+	 fill: #FFFFFF;
+}
+ .st4 {
+	 fill-rule: evenodd;
+	 clip-rule: evenodd;
+	 fill: #E8EBED;
+	 stroke: #89949B;
+	 stroke-width: 3;
+	 stroke-linecap: round;
+	 stroke-linejoin: round;
+	 stroke-miterlimit: 10;
+}
+ .st5 {
+	 fill-rule: evenodd;
+	 clip-rule: evenodd;
+	 fill: #FFFFFF;
+	 stroke: #89949B;
+	 stroke-width: 3;
+	 stroke-linecap: round;
+	 stroke-linejoin: round;
+	 stroke-miterlimit: 10;
+}
+ .st6 {
+	 fill-rule: evenodd;
+	 clip-rule: evenodd;
+	 fill: none;
+	 stroke: #89949B;
+	 stroke-width: 3;
+	 stroke-linecap: round;
+	 stroke-linejoin: round;
+	 stroke-miterlimit: 10;
+}
+ .st7 {
+	 fill-rule: evenodd;
+	 clip-rule: evenodd;
+	 fill: none;
+	 stroke: #89949B;
+	 stroke-width: 4;
+	 stroke-linecap: round;
+	 stroke-linejoin: round;
+	 stroke-miterlimit: 10;
+}
+ .st8 {
+	 fill-rule: evenodd;
+	 clip-rule: evenodd;
+	 fill: #FFFFFF;
+	 stroke: #89949B;
+	 stroke-width: 2;
+	 stroke-linecap: round;
+	 stroke-linejoin: round;
+	 stroke-miterlimit: 10;
+}
+ .st9 {
+	 fill: #89949B;
+}
+ .st10 {
+	 fill-rule: evenodd;
+	 clip-rule: evenodd;
+	 fill: #89949B;
+}
+ .st11 {
+	 fill-rule: evenodd;
+	 clip-rule: evenodd;
+	 fill: none;
+	 stroke: #89949B;
+	 stroke-width: 2;
+	 stroke-linecap: round;
+	 stroke-linejoin: round;
+	 stroke-miterlimit: 10;
+}
+ .st12 {
+	 fill-rule: evenodd;
+	 clip-rule: evenodd;
+	 fill: #FFFFFF;
+}
+ .st13 {
+	 fill-rule: evenodd;
+	 clip-rule: evenodd;
+	 fill: #FFFFFF;
+	 stroke: #8894A0;
+	 stroke-width: 3;
+	 stroke-linecap: round;
+	 stroke-linejoin: round;
+	 stroke-miterlimit: 10;
+}
+ .st14 {
+	 fill-rule: evenodd;
+	 clip-rule: evenodd;
+	 fill: none;
+	 stroke: #89949B;
+	 stroke-linecap: round;
+	 stroke-linejoin: round;
+	 stroke-miterlimit: 10;
+}
+ .st15 {
+	 fill: none;
+	 stroke: #89949B;
+	 stroke-linecap: round;
+	 stroke-linejoin: round;
+	 stroke-miterlimit: 10;
+}
+ #moon {
+	 transform-origin: 640px 81px;
+}
+ #monkey-eye-l {
+	 transform-origin: 191px 257px;
+}
+ #monkey-eye-r {
+	 transform-origin: 205px 256px;
+}
+ #monkey-arm {
+	 transform-origin: 155px 298px;
+}
+ #star1 {
+	 transform-origin: 643px 338px;
+}
+ #star2 {
+	 transform-origin: 489px 82px;
+}
+ #star3 {
+	 transform-origin: 316px 344px;
+}
+ #star4 {
+	 transform-origin: 126px 182px;
+}
+ #sword-path {
+	 transform-origin: 458px 206px;
+}
+ #sword {
+	 transform-origin: 458px 206px;
+}
+ #tetris-path {
+	 transform-origin: 538px 374px;
+}
+ #tetris {
+	 transform-origin: 538px 374px;
+}
+ #triforce {
+	 transform-origin: 175px 91px;
+}
+ 

@@ -11,6 +11,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cookies": "^0.8.0",
+    "disco-oauth": "^4.2.1",
     "discord.js": "^12.1.1",
     "express": "^4.17.1",
     "mongoose": "^5.9.15",
