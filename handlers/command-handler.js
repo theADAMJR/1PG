@@ -15,6 +15,7 @@ for (const file of commandFiles) {
 
     bot.commands.set(command.name, command);
 }
+console.log(`Loaded ${commandFiles.length} commands`);
 
 function handleCommand(msg, prefix) {
     const commandName = msg.content

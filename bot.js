@@ -5,8 +5,6 @@ const { handleCommand } = require('./handlers/command-handler'),
       users = require('./data/users'),
       { connect } = require('mongoose');
 
-require('./dashboard/server');
-
 const bot = new Discord.Client();
 
 bot.on('ready', () => console.log('Bot is live! :)'));
