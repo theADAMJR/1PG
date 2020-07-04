@@ -1,0 +1,11 @@
+.icon {
+  border: 2px solid black;
+  font-size: x-large;
+  max-height: 68px;
+}
+
+.abbr {
+  width: 68px;
+  height: 68px;
+  padding-top: 13.5px;
+}

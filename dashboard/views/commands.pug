@@ -1,10 +1,23 @@
 include includes/header.pug
 body
   style
-    include css/home.css
+    include css/commands.css
   include includes/navbar.pug
-  .jumbotron.text-center.bg-transparent
-    h1.display-3 1PG
-    p.lead The best bot in the known universe and the milk way.
-      i.fas.fa-star.ml-2
-    a.btn.btn-dark.text-light(href="/invite") Add
+  .container.jumbotron.pb-0.bg-transparent
+    h1.display-3 Commands
+    p.lead Find 1PG's wide range of commands
+    hr
+  .container
+    .row
+      .col-sm-3
+        ul.list-group.categories
+          each mod in modules
+            li.list-group-item.my-1.border.border-light.rounded.cursor-pointer(onclick="setCategory('" + mod.name + "')")
+              i.fas.mr-1(class=mod.icon)
+              span #{utils.camelToSentenceCase(mod.name)}
+      .col-sm-9
+        ul.list-group.commands
+          each command in commands
+            li.list-group-item.my-1.border.border-light.rounded.cursor-pointer(class=command.moduleName)= command.name
+  script
+    include js/commands.js

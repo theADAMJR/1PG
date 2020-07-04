@@ -2,7 +2,8 @@ const config = require('../config.json'),
       cookies = require('cookies'),
       express = require('express');
 
-const rootRoutes = require('./routes/root-routes');
+const dashboardRoutes = require('./routes/dashboard-routes'),
+      rootRoutes = require('./routes/root-routes');
 
 const app = express();
 
@@ -12,6 +13,7 @@ app.set('view engine', 'pug');
 app.set('views', __dirname + '/views')
 
 app.use('/', rootRoutes);
+app.use('/', dasboardRoutes)
 
 const port = 3000;
 app.listen(port, () => console.log(`Server started on port ${port}`))
