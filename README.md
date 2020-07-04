@@ -25,3 +25,6 @@ This should be in the root project directory.
 }
 
 Remember to edit `yourDiscordBotToken` and other values and replace it with the appropriate values found at the [Discord Developer Portal](https://discord.com/developers)
+
+## Set your redirect URIs
+![OAuth Redirect URIs](https://i.ibb.co/n0XMtYn/1pg-oauth.png)
