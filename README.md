@@ -1,13 +1,8 @@
 # 1PG
 
----
-
 ## Prerequisites
 - [MongoDB](https://www.mongodb.com/try/download/community); used for saving data
 - [NodeJS](https://nodejs.org/en/); used for running the bot
-
----
-
 
 ## Before your start
 
@@ -18,9 +13,15 @@ This should be in the root project directory.
 ### Paste this into config.json
 ```
 {
-  "mongoURL": "mongodb://localhost/1PG",
-  "token": "yourDiscordBotToken"
+  "bot": {
+      "id": "yourDiscordBotId",
+      "token": "yourDiscordBotToken",
+      "secret": "yourDiscordApplicationSecret"
+  },
+  "dashboard": {
+      "url": "http://localhost:3000"
+  },
+  "mongoURL": "mongodb://localhost/1PG"
 }
-```
 
-Remember to edit `yourDiscordBotToken` value and replace with your Discord bot token which is found at the [Discord Developer Portal](https://discord.com/developers)
+Remember to edit `yourDiscordBotToken` and other values and replace it with the appropriate values found at the [Discord Developer Portal](https://discord.com/developers)
