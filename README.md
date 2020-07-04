@@ -23,6 +23,7 @@ This should be in the root project directory.
   },
   "mongoURL": "mongodb://localhost/1PG"
 }
+```
 
 Remember to edit `yourDiscordBotToken` and other values and replace it with the appropriate values found at the [Discord Developer Portal](https://discord.com/developers)
 
