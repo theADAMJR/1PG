@@ -12,7 +12,9 @@
   "license": "ISC",
   "dependencies": {
     "discord.js": "^12.1.1",
-    "mongoose": "^5.9.15"
+    "express": "^4.17.1",
+    "mongoose": "^5.9.15",
+    "pug": "^3.0.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.3"
