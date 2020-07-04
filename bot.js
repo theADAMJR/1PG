@@ -34,3 +34,5 @@ bot.login(config.bot.token);
 connect(config.mongoURL,
     { useNewUrlParser: true, useUnifiedTopology: true },
     () => console.log('Connected to db! :)'));
+
+module.exports = bot;

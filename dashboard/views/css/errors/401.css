@@ -1,0 +1,51 @@
+body {
+  background-color: #080808;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items: center;
+  color: black;
+  font-family: 'AndaleMono', monospace;
+  text-transform: uppercase;
+}
+
+#errorCodeDigits, #errorText {
+  display: block;
+  font-size: 1.4em;
+  white-space: pre-wrap;
+  text-shadow: 0 0 2px rgba(46, 241, 65, 10.75);
+  line-height: 1.1; 
+  letter-spacing:-0.1rem;
+  margin-top: 4rem;
+  overflow-y: hidden;
+}
+#errorCodeDigits {
+  order: 0;
+  transition: all 0.3s ease-out
+}
+#errorText {
+  order: 1;
+  line-height: 0.75;
+  text-align: center;
+}
+
+#info {
+  position:absolute;
+  bottom:0px;
+  right:0px;
+  padding:1rem;
+}
+
+.zeroLineHeight{ line-height: 0 !important; }
+.zeroOpacity{  opacity:0 !important; }
+.spacedLetters{  letter-spacing:2rem !important; }
+
+.cursor:before { content:'█'; }
+
+.animateFlicker {  animation: flickerAnimation 1s infinite;}
+
+@keyframes flickerAnimation {
+  0%   { opacity:1; }
+  50%  { opacity:0; }
+  100% { opacity:1; }
+}

@@ -2,6 +2,8 @@ body {
   background-color: black;
 }
 
+/* utils */
+
 .round {
   border-radius: 50%;
 }
@@ -20,4 +22,13 @@ body {
 
 .row img {
   width: 64px;
+}
+
+/* tweaks */
+a:focus {
+  outline: none;
+}
+a {
+  color: black !important;
+  text-decoration: none !important;
 }

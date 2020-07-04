@@ -4,8 +4,38 @@ body
     include ../css/dashboard/show.css
   include ../includes/navbar.pug
   .container.jumbotron.text-center.bg-transparent
-    h1.display-3 Hey, #{user.username}
-    hr
-    p.lead Pick a server
-    p= JSON.stringify(guild)
-    p= JSON.stringify(savedGuild)
+    h1.display-4
+      if guild.iconHash
+        img.round.mr-3(src=guild.iconUrl(64))
+      span #{guild.name}
+  .container
+    ul.nav.nav-tabs
+      li.nav-item.cursor-pointer
+        a#overviewTab.nav-link(onclick="setModule('overview')")
+          i.fas.fa-eye.mr-2
+          span Overview
+      li.nav-item.cursor-pointer
+        a#autoModTab.nav-link(onclick="setModule('autoMod')")
+          i.fas.fa-gavel.mr-2
+          span Auto Mod
+      li.nav-item.cursor-pointer
+        a#economyTab.nav-link(onclick="setModule('economy')")
+          i.fas.fa-coins.mr-2
+          span Economy
+      li.nav-item.cursor-pointer
+        a#generalTab.nav-link(onclick="setModule('general')")
+          i.fas.fa-star.mr-2
+          span General
+      li.nav-item.cursor-pointer
+        a#musicTab.nav-link(onclick="setModule('music')")
+          i.fas.fa-music.mr-2
+          span Music
+
+    form(action='/servers/' + guild.id, method="POST")
+      include modules/overview.pug
+      include modules/auto-mod.pug
+      include modules/economy.pug
+      include modules/general.pug
+      include modules/music.pug
+  script
+    include ../js/dashboard/show.js

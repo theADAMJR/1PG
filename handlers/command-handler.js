@@ -1,8 +1,7 @@
-const bot = require('../bot'),
-      fs = require('fs'),
+const fs = require('fs'),
       path = require('path');
 
-bot.commands = new Map();
+const commands = new Map();
 
 const commandFiles = fs
     .readdirSync(path.dirname(require.main.filename) + '/commands')
@@ -13,14 +12,14 @@ for (const file of commandFiles) {
     const command = new Command();
     if (!command.name) continue;
 
-    bot.commands.set(command.name, command);
+    commands.set(command.name, command);
 }
 console.log(`Loaded ${commandFiles.length} commands`);
 
 function handleCommand(msg, prefix) {
     const commandName = msg.content
         .slice(prefix.length)    
-    const command = bot.commands.get(commandName);
+    const command = commands.get(commandName);
     if (!command) return;
 
     try {
