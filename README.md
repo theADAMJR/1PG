@@ -8,6 +8,7 @@
 
 ### Create a config.json file
 This should be in the root project directory.
+
 ![Root Directory](https://i.ibb.co/pJJND6R/root-dir.png)
 
 ### Paste this into config.json
