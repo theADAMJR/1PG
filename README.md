@@ -1,6 +1,6 @@
 # 1PG
 
-![Dashboard Preview](https://i.ibb.co/y4wKsS3/1pg-dashboard.png)
+![Dashboard Preview](https://i.ibb.co/NT8fYS4/1pg-dashboard.png)
 
 ## Prerequisites
 - [MongoDB](https://www.mongodb.com/try/download/community); used for saving data
