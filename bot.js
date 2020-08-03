@@ -7,7 +7,8 @@ const { handleCommand } = require('./handlers/command-handler'),
 
 const bot = new Client();
 
-bot.on('ready', () => console.log('Bot is live! :)'));
+// this was changed
+bot.on('ready', () => console.log(`${bot.user.username} is live! :)`));
 
 bot.on('message', async(msg) => {
     if (!msg.guild) return;
