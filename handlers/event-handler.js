@@ -11,6 +11,6 @@ for (const fileName of eventFiles) {
   const event = new Event();
   if (!event.on) continue;
 
-  bot.on(event.on, event.invoke.bind(this));
+  bot.on(event.on, event.invoke.bind(event));
 }
 console.log(`Loaded ${eventFiles.length} events`);
