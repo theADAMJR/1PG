@@ -1,4 +1,5 @@
 const fs = require('fs');
+const guilds = require('../data/guilds');
 
 const commands = new Map();
 
@@ -13,16 +14,22 @@ for (let fileName of fileNames) {
 console.log(`Loaded ${commands.size} commands`);
 
 async function handleCommand(msg) {
-  const prefix = '.';
+  const savedGuild = await guilds.get(msg.guild.id);
+  const prefix = savedGuild.general.prefix;
+
   if (!msg.content.startsWith(prefix))
     return false;
 
-  const slicedContent = msg.content
+  const name = msg.content
     .split(' ')[0]
     .slice(prefix.length);
 
-  const command = commands.get(slicedContent);
-  try { await command?.execute(msg); }
+  const args = msg.content
+    .split(' ')
+    .slice(1);
+
+  const command = commands.get(name);
+  try { await command?.execute(msg, ...args); }
   catch (error) {
     msg.channel.send(`⚠ ${error?.message ?? 'Unknown error.'}`);
   }

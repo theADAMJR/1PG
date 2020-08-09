@@ -6,7 +6,5 @@ module.exports = class extends Event {
   
   invoke() {
     console.log(`Logged in as ${bot.user.username}`);
-  
-    bot.user.setStatus('idle');
   }
 }
