@@ -1,7 +1,7 @@
 # 1PG Demo
 This is a demo of [1PG](https://github.com/theADAMJR/1PG) and was made during a [course](https://www.youtube.com/watch?v=PuJjkD8zKVI).
 
-Make a commit file `config.json`:
+Make a file `config.json`:
 ```json
 {
   "mongoURI": "mongodb://localhost/1PG-Demo",
