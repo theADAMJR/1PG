@@ -16,3 +16,4 @@ mongoose.connect(config.mongoURI,
 module.exports = bot;
 
 require('./handlers/event-handler');
+require('./dashboard/server');
