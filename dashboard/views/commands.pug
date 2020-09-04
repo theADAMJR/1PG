@@ -24,8 +24,11 @@ html(lang="en")
             i.fas.fa-search
         .row
           .col-sm-3.categories
-            each category in categories
-              +category(category)
-          .col-sm-9
-            each command in commands
-              +command(command)
+            ul.list-group.mb-2
+              each category in categories
+                +category(category)
+          .col-sm-9.commands
+            ul.list-group.mb-2
+              each command in commands
+                +command(command)
+              p#commandError
