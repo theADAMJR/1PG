@@ -38,3 +38,4 @@ async function handleCommand(msg) {
 }
 
 module.exports.handleCommand = handleCommand;
+module.exports.commands = commands;

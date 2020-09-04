@@ -1,4 +1,4 @@
-const SavedGuild = require('../models/guild');
+const SavedGuild = require('./models/guild');
 
 module.exports = new class {
   async get(id) {

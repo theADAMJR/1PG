@@ -1,4 +1,5 @@
 const express = require('express');
+const { commands } = require('../handlers/command-handler');
 
 const app = express();
 
@@ -15,7 +16,9 @@ app.get('/commands', (req, res) => res.render('commands', {
     { name: 'Auto Mod', icon: 'fas fa-gavel' },
     { name: 'Economy', icon: 'fas fa-coins' }, 
     { name: 'General', icon: 'fas fa-star' },
-    { name: 'Music', icon: 'fas fa-music' }]
+    { name: 'Music', icon: 'fas fa-music' }
+  ],
+  commands: Array.from(commands.values())
 }));
 
 const port = process.env.PORT || 3000;
