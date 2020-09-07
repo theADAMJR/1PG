@@ -18,7 +18,8 @@ app.get('/commands', (req, res) => res.render('commands', {
     { name: 'General', icon: 'fas fa-star' },
     { name: 'Music', icon: 'fas fa-music' }
   ],
-  commands: Array.from(commands.values())
+  commands: Array.from(commands.values()),
+  commandsString: JSON.stringify(Array.from(commands.values()))
 }));
 
 const port = process.env.PORT || 3000;
