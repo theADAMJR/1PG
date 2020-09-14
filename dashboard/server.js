@@ -1,5 +1,7 @@
 const express = require('express');
-const { commands } = require('../handlers/command-handler');
+
+const authRoutes = require('./routes/auth-routes');
+const rootRoutes = require('./routes/root-routes');
 
 const app = express();
 
@@ -9,18 +11,7 @@ app.set('view engine', 'pug');
 app.use(express.static(`${__dirname}/assets`));
 app.locals.basedir = `${__dirname}/assets`;
 
-app.get('/', (req, res) => res.render('index'));
-app.get('/commands', (req, res) => res.render('commands', {
-  subtitle: 'Commands',
-  categories: [
-    { name: 'Auto Mod', icon: 'fas fa-gavel' },
-    { name: 'Economy', icon: 'fas fa-coins' }, 
-    { name: 'General', icon: 'fas fa-star' },
-    { name: 'Music', icon: 'fas fa-music' }
-  ],
-  commands: Array.from(commands.values()),
-  commandsString: JSON.stringify(Array.from(commands.values()))
-}));
+app.use('/', rootRoutes, authRoutes);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Server is live on port ${port}`));
