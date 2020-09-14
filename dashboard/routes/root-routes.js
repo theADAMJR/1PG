@@ -4,6 +4,7 @@ const { commands } = require('../../handlers/command-handler');
 const router = express.Router();
 
 router.get('/', (req, res) => res.render('index'));
+
 router.get('/commands', (req, res) => res.render('commands', {
   subtitle: 'Commands',
   categories: [
