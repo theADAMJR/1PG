@@ -1,4 +1,5 @@
 # 1PG
+This project is currently being remastered as part of a [youtube series](https://youtube.com/adamjr) and Udemy course.
 
 ![Dashboard Preview](https://i.ibb.co/NT8fYS4/1pg-dashboard.png)
 
