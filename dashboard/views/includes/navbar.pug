@@ -8,6 +8,16 @@ nav.navbar.navbar-expand-lg.navbar-light
         i.fas.fa-code
         span.pl-1 Commands
     .navbar-nav.ml-auto
-      a.nav-link(href='/login') 
-        i.fas.fa-sign-in-alt
-        span.pl-1 Login
+      if user
+        .dropdown.mr-2
+          .dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+            img.user-avatar.round(src=user.avatarUrl(32))
+            span.pl-2 #{user.username}
+          .dropdown-menu
+            a.dropdown-item(href='/dashboard') Dashboard
+            hr
+            a.dropdown-item(href='/logout') Logout
+      else
+        a.nav-link(href='/login') 
+          i.fas.fa-sign-in-alt
+          span.pl-1 Login

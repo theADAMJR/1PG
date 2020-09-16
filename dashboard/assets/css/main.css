@@ -1,0 +1,7 @@
+body {
+  overflow-x: hidden;
+}
+
+.round {
+  border-radius: 50%;
+}
