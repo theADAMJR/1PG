@@ -2,7 +2,7 @@ const bodyParser = require('body-parser'),
       cookies = require('cookies'),
       express = require('express'),
       methodOverride = require('method-override'),
-      { setUser } = require('./middleware');
+      { setUser, updateGuilds, validateUser } = require('./middleware');
 
 const authRoutes = require('./routes/auth-routes'),
       dashboardRoutes = require('./routes/dashboard-routes'),
@@ -19,7 +19,7 @@ app.set('views', __dirname + '/views')
 
 app.use('/', setUser, rootRoutes);
 app.use('/', setUser, authRoutes);
-app.use('/',  dashboardRoutes);
+app.use('/', setUser, validateUser, updateGuilds, dashboardRoutes);
 
 app.get('*', (req, res) => res.render('errors/404'));
 

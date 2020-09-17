@@ -6,19 +6,4 @@ body
   .container.jumbotron.text-center.bg-transparent
     h1.display-3 Hey, #{user.username}
     hr
-    p.lead Pick a server
-  .container
-    .guilds.row.d-flex.justify-content-center
-      each guild in guilds
-        .col-2.mb-4.float-left.d-flex.justify-content-center
-          a(href='/servers/' + guild.id)
-            .icon.round.shadow
-              if guild.iconHash
-                img.round(alt=guild._name, src=guild.iconUrl(64))
-              else
-                p.text-center.abbr= utils.getAbbreviation(guild.name)
-      .col-2.mb-4.float-left.d-flex.justify-content-center
-        a(href="/invite")
-          .icon.round.shadow
-            p.abbr.text-success.text-center.pr-1
-              i.fas.fa-plus
+    p.lead Welcome to the 1PG dashboard!
