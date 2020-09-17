@@ -12,7 +12,7 @@ router.get('/login', (req, res) => res.redirect(loginURL));
 
 router.get('/auth', async (req, res) => {
   const key = await AuthClient.getAccess(req.query.code);
-  res.cookies.set('key', key);  
+  res.cookies.set('key', key);
   res.redirect('/dashboard');
 });
 router.get('/logout', (req, res) => {

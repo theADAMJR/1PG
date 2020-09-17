@@ -18,7 +18,7 @@ console.log(`Loaded ${commandFiles.length} commands`);
 
 function handleCommand(msg, prefix) {
     const commandName = msg.content
-        .slice(prefix.length)    
+        .slice(prefix.length);
     const command = commands.get(commandName);
     if (!command) return;
 

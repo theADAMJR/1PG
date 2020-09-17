@@ -8,7 +8,7 @@ module.exports.setUser = async function setUser (req, res, next) {
   if (key)
     res.locals.user = await AuthClient.getUser(key);
 
-  next();
+  return next();
 }
 
 module.exports.validateUser = function validateUser(req, res, next) {
@@ -16,5 +16,5 @@ module.exports.validateUser = function validateUser(req, res, next) {
   if (!key)
     return res.render('errors/401');
   
-  next();
+  return next();
 }

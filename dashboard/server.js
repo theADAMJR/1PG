@@ -2,7 +2,7 @@ const bodyParser = require('body-parser'),
       cookies = require('cookies'),
       express = require('express'),
       methodOverride = require('method-override'),
-      { setUser, validateUser } = require('./middleware');
+      { setUser } = require('./middleware');
 
 const authRoutes = require('./routes/auth-routes'),
       dashboardRoutes = require('./routes/dashboard-routes'),
