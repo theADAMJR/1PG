@@ -1,0 +1,19 @@
+#sidebar {
+  height: 100vh;
+  padding: 10px;
+}
+.icon, .icon img {
+  font-size: x-large;
+
+  height: 52px;
+  width: 52px;
+
+  margin: .25rem 0;
+  transition: border-radius .3s ease-in-out;
+}
+.icon:hover, .icon img:hover {
+  border-radius: 15% !important;
+}
+.abbr {
+  padding-top: 7.5px;
+}
