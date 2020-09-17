@@ -19,7 +19,7 @@ app.set('views', __dirname + '/views')
 
 app.use('/', setUser, rootRoutes);
 app.use('/', setUser, authRoutes);
-app.use('/', dashboardRoutes);
+app.use('/',  dashboardRoutes);
 
 app.get('*', (req, res) => res.render('errors/404'));
 

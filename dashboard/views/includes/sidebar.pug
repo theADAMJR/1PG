@@ -1,0 +1,30 @@
+#sidebar.float-left.bg-light
+  a(href='/dashboard')
+    .icon.round.shadow.bg-light.my-2
+      img.round(alt=user.username, src=user.avatarUrl(64))
+  hr
+  each guild in guilds
+    a(href='/servers/' + guild.id)
+      .icon.round.shadow.bg-light.my-2
+        if true && guild.iconHash
+          img.round(alt=guild.name, src=guild.iconUrl(64))
+        else
+          p.text-center.abbr #{utils.getAbbreviation(guild.name)}
+  a(href='/invite')
+    .icon.round.shadow.bg-light.my-2
+      p.abbr.text-success.text-center #[i.fas.fa-plus]
+
+style.
+  #sidebar {
+    min-height: 100vh;
+    padding: 10px;
+  }  
+  .icon, .icon img {
+    font-size: x-large;
+
+    height: 52px;
+    width: 52px;  
+  }
+  .abbr {
+    padding-top: 7.5px;
+  }
