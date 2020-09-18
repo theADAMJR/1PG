@@ -2,11 +2,28 @@ doctype
 html(lang='en')
   head
     include ../includes/header.pug
-
-    link(rel='stylesheet', href='/css/index.css')
+    
+    script(src='/js/sidebar.js', defer)
     link(rel='stylesheet', href='/css/sidebar.css')
   body
     include ../includes/sidebar.pug
+
+    #sidebarExtension.bg-light
+      header.text-center.pt-4
+        .large-icon.bg-white.round
+          if guild.icon
+            img.round(src=guild.iconURL({ dynamic: true, size: 128 }), alt=guild.name)
+          else
+            p.abbr #{guild.nameAcronym}
+        h4.pt-2 #{guild.name}
+      .tabs.navbar-nav
+        .category Modules
+        a(href='#') #[i.fas.fa-gavel.pr-1.text-muted] Auto-mod
+        a(href='#') #[i.fas.fa-coins.pr-1.text-muted] Economy
+        a(href='#') #[i.fas.fa-star.pr-1.text-muted] General
+        a(href='#') #[i.fas.fa-music.pr-1.text-muted] Music
+
     include ../includes/navbar.pug
+    
     .jumbotron.text-center.bg-transparent
       h1.display-3 #{guild.name}

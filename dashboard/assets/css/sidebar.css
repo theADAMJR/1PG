@@ -1,14 +1,9 @@
-#sidebar {
-  height: 100vh;
-  padding: 10px;
-}
 .icon, .icon img {
   font-size: x-large;
 
   height: 52px;
   width: 52px;
 
-  margin: .25rem 0;
   transition: border-radius .3s ease-in-out;
 }
 .icon:hover, .icon img:hover {
@@ -16,4 +11,81 @@
 }
 .abbr {
   padding-top: 7.5px;
+}
+
+.hamburger {
+  cursor: pointer;
+  font-size: xxx-large;
+
+  bottom: 0;
+  position: absolute;
+}
+
+#sidebar {
+  padding: 10px;
+}
+#sidebar,
+#sidebarExtension {
+  height: 100vh;
+  float: left;
+}
+
+/* extension */
+#sidebarExtension {
+  width: 275px;
+  transition: .3s;
+  opacity: 1;
+}
+#sidebarExtension .large-icon {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+#sidebarExtension .large-icon,
+#sidebarExtension img {
+  font-size: xx-large;
+
+  width: 96px;
+  height: 96px;
+}
+#sidebarExtension .abbr {
+  padding-top: 25px;
+}
+
+#sidebarExtension.closed {
+  width: 0;
+  padding: 0px 0;
+}
+#sidebarExtension.closed {
+  opacity: 0;
+}
+
+/* tabs */
+.tabs a {
+  margin: 2px 10px;
+  padding: 5px;
+  padding-left: 10px !important;
+  border-radius: 5px;
+
+  text-decoration: none;
+  color: black;
+}
+.tabs a:hover {
+  background-color: white;
+}
+
+.tabs .category {
+  padding: 24px 0 4px 24px;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 700;
+
+  color: gray;
+  cursor: pointer;
+
+  transition: color .3s ease-in-out;
+}
+.tabs .category:hover {
+  color: black;
 }
