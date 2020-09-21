@@ -1,5 +1,5 @@
 const OAuthClient = require('disco-oauth');
-const config = require('../config.json');
+const config = require('../../config.json');
 
 const client = new OAuthClient(config.bot.id, config.bot.secret);
 client.setRedirect(`${config.dashboardURL}/auth`);

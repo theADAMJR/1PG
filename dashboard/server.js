@@ -1,6 +1,6 @@
 const cookies = require('cookies');
 const express = require('express');
-const middleware = require('./middleware');
+const middleware = require('./modules/middleware');
 
 const authRoutes = require('./routes/auth-routes');
 const dashboardRoutes = require('./routes/dashboard-routes');
