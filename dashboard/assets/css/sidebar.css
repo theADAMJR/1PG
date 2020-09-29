@@ -52,6 +52,9 @@
 #sidebarExtension .abbr {
   padding-top: 25px;
 }
+#sidebarExtension h4 {
+  cursor: pointer;
+}
 
 #sidebarExtension.closed {
   width: 0;
