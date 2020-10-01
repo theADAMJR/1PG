@@ -2,6 +2,7 @@ const { model } = require('mongoose');
 
 class GeneralModule {
   prefix = '.';
+  blacklistedChannelIds = [];
 }
 
 module.exports = model('guild', {

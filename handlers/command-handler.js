@@ -17,6 +17,11 @@ async function handleCommand(msg) {
   const savedGuild = await guilds.get(msg.guild.id);
   const prefix = savedGuild.general.prefix;
 
+  const channelIsBlacklisted = savedGuild.general.blacklistedChannelIds
+    .includes(msg.channel.id);
+  if (channelIsBlacklisted)
+    return false;
+
   if (!msg.content.startsWith(prefix))
     return false;
 
