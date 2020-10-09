@@ -12,7 +12,7 @@ Make a file `config.json`:
     "token": "<bot_token>"
   },
   "dashboardURL": "http://localhost:3000",
-  "mongoURI": "mongodb://localhost/1PG-Demo",
+  "mongoURI": "mongodb://localhost/1PG-Demo"
 }
 ```
 
