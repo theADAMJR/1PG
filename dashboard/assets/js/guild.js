@@ -9,4 +9,13 @@ function setModule(name) {
   $(`#${name}`).addClass('active');
 }
 
+$('input').on('input', function() {
+  $(this)[0].checkValidity()
+    ? $(this).removeClass('border border-danger')
+    : $(this).addClass('border border-danger');
+
+  $('button.btn.btn-success')
+    .attr('disabled', !$('form')[0].checkValidity());
+});
+
 setModule('overview');

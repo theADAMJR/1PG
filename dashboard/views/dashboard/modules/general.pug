@@ -6,10 +6,12 @@ section#generalModule.module.container.px-5
       .row
         .col-4
           label Prefix
-          input.form-control(type='text', name='prefix', value=savedGuild.general.prefix)
+          input.form-control(type='text', name='prefix', value=savedGuild.general.prefix,
+            maxlength='5', required)
         .col-4
           label Blacklisted Channels
-          select.form-control(name='blacklistedChannelIds', multiple)
+          input(name='blacklistedChannelIds', type='hidden', value='')
+          select.form-control(name='blacklistedChannelIds[]', multiple)
             each channel of Array.from(guild.channels.cache.filter(c => c.type === 'text').values())
               if savedGuild.general.blacklistedChannelIds.includes(channel.id)
                 option(value=channel.id, selected) ##{channel.name}
