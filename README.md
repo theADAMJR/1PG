@@ -1,5 +1,5 @@
-# 1PG Demo
-This is a demo of [1PG](https://github.com/theADAMJR/1PG) and was made during a [course](https://www.youtube.com/watch?v=PuJjkD8zKVI).
+# 1PG
+This is a the project used was made during a [YouTube series/course](https://www.youtube.com/watch?v=H2xkRFabWM8&list=PLGfT2ttRbfizDIRPIqzNvyIlrFJ-d7sm0).
 
 ## Setup
 
