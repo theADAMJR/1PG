@@ -1,5 +1,5 @@
 # 1PG
-This is a the project used was made during a [YouTube series/course](https://www.youtube.com/watch?v=H2xkRFabWM8&list=PLGfT2ttRbfizDIRPIqzNvyIlrFJ-d7sm0).
+Create a Discord Bot Dashboard Series - https://www.youtube.com/watch?v=tpIQM90o_pY&list=PLGfT2ttRbfizUIO1YEITWaquqBsNqHv7v&index=1
 
 ## Setup
 
