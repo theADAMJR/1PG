@@ -1,5 +1,7 @@
 # 1PG Demo
-This is a demo of [1PG](https://github.com/theADAMJR/1PG) and was made during a [YouTube video series](https://www.youtube.com/watch?v=PuJjkD8zKVI) which is a foundation for an upcoming udemy course.
+This is a demo of [1PG](https://github.com/theADAMJR/1PG) and was made during a [YouTube video series](https://www.youtube.com/watch?v=PuJjkD8zKVI) and a Udemy course.
+
+1PG Course - https://udemy.com/course/create-the-best-discord-bot/?referralCode=5CB95A4D9309B1F54560
 
 ## Setup
 
