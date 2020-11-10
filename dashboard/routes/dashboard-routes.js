@@ -1,6 +1,7 @@
 const express = require('express');
-const guilds = require('../../data/guilds');
 const { validateGuild } = require('../modules/middleware');
+const log = require('../modules/audit-logger');
+const guilds = require('../../data/guilds');
 
 const router = express.Router();
 
@@ -14,8 +15,16 @@ router.get('/servers/:id', validateGuild,
 router.put('/servers/:id/:module', validateGuild, async (req, res) => {
   try {
     const { id, module } = req.params;
-    
+
     const savedGuild = await guilds.get(id);
+
+    await log.change(id, {
+      module,
+      by: res.locals.user.id,
+      old: {...req.body},
+      new: {...savedGuild[module]}
+    });
+    
     savedGuild[module] = req.body;
     await savedGuild.save();
 
