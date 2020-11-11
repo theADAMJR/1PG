@@ -16,6 +16,6 @@ section#auditLogModule.module.container.px-5
             if i < 3
               th(scope='row') #{savedLog.changes.length - i}
               td #{new Date(change.at).toLocaleString()}
-              td #{change.by}
+              td #[+user(users.get(change.by))]
               td #[pre #[code #{JSON.stringify(change.old, null, 2)}]]
               td #[pre #[code #{JSON.stringify(change.new, null, 2)}]]

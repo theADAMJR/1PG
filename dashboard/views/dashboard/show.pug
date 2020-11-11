@@ -2,9 +2,13 @@ doctype
 html(lang='en')
   head
     include ../includes/header.pug
-    
+    include ../includes/mixins.pug
+
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/highlight.min.js', defer)    
     script(src='/js/sidebar.js', defer)
     script(src='/js/guild.js', defer)
+
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.3.2/styles/ascetic.min.css')
     link(rel='stylesheet', href='/css/sidebar.css')
   body
     include ../includes/sidebar.pug

@@ -1,3 +1,7 @@
 body {
   overflow-x: hidden;
 }
+
+.user-avatar {
+  max-width: 36px;
+}
