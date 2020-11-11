@@ -24,6 +24,9 @@ html(lang='en')
         a#general.cursor-pointer #[i.fas.fa-star.pr-1.text-muted] General
         a#music.cursor-pointer #[i.fas.fa-music.pr-1.text-muted] Music
 
+        .category Other
+        a#auditLog.cursor-pointer #[i.fas.fa-book.pr-1.text-muted] Audit Log
+
     include ../includes/navbar.pug
 
     include modules/overview
@@ -31,3 +34,5 @@ html(lang='en')
     include modules/economy
     include modules/general
     include modules/music
+
+    include extensions/audit-log

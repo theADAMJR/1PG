@@ -2,6 +2,7 @@ const express = require('express');
 const { validateGuild } = require('../modules/middleware');
 const log = require('../modules/audit-logger');
 const guilds = require('../../data/guilds');
+const logs = require('../../data/logs');
 
 const router = express.Router();
 
@@ -9,7 +10,8 @@ router.get('/dashboard', (req, res) => res.render('dashboard/index'));
 
 router.get('/servers/:id', validateGuild,
   async (req, res) => res.render('dashboard/show', {
-    savedGuild: await guilds.get(req.params.id)
+    savedGuild: await guilds.get(req.params.id),
+    savedLog: await logs.get(req.params.id)
   }));
 
 router.put('/servers/:id/:module', validateGuild, async (req, res) => {
@@ -19,10 +21,11 @@ router.put('/servers/:id/:module', validateGuild, async (req, res) => {
     const savedGuild = await guilds.get(id);
 
     await log.change(id, {
-      module,
+      at: new Date(),
       by: res.locals.user.id,
-      old: {...req.body},
-      new: {...savedGuild[module]}
+      module,
+      new: {...savedGuild[module]},
+      old: {...req.body}
     });
     
     savedGuild[module] = req.body;
