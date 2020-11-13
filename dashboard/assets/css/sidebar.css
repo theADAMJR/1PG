@@ -23,6 +23,7 @@
 
 #sidebar {
   padding: 10px;
+  background-color: var(--background-tertiary);
 }
 #sidebar,
 #sidebarExtension {
@@ -35,6 +36,7 @@
   width: 275px;
   transition: .3s;
   opacity: 1;
+  background-color: var(--background-secondary);
 }
 #sidebarExtension .large-icon {
   display: block;
@@ -72,11 +74,11 @@
   border-radius: 5px;
 
   text-decoration: none;
-  color: black;
+  color: var(--font);
 }
 .tabs a.active,
 .tabs a:hover {
-  background-color: white;
+  background-color: var(--background-primary);
 }
 
 .tabs .category {
@@ -91,5 +93,5 @@
   transition: color .3s ease-in-out;
 }
 .tabs .category:hover {
-  color: black;
+  color: var(--heading);
 }
