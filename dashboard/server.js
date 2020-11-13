@@ -3,6 +3,7 @@ const cookies = require('cookies');
 const express = require('express');
 const methodOverride = require('method-override');
 const middleware = require('./modules/middleware');
+const rateLimit = require('./modules/rate-limiter');
 
 const authRoutes = require('./routes/auth-routes');
 const dashboardRoutes = require('./routes/dashboard-routes');
@@ -13,6 +14,7 @@ const app = express();
 app.set('views', __dirname + '/views');
 app.set('view engine', 'pug');
 
+app.use(rateLimit);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use(cookies.express('a', 'b', 'c'));
