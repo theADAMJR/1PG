@@ -17,13 +17,10 @@ async function handleCommand(msg) {
   const savedGuild = await guilds.get(msg.guild.id);
   const prefix = savedGuild.general.prefix;
 
-  const channelIsBlacklisted = savedGuild.general.blacklistedChannelIds
-    .includes(msg.channel.id);
-  if (channelIsBlacklisted)
-    return false;
+  const channelIsBlacklisted = savedGuild.general.blacklistedChannelIds.includes(msg.channel.id);
+  if (channelIsBlacklisted) return;
 
-  if (!msg.content.startsWith(prefix))
-    return false;
+  if (!msg.content.startsWith(prefix)) return;
 
   const name = msg.content
     .split(' ')[0]
@@ -34,12 +31,13 @@ async function handleCommand(msg) {
     .slice(1);
 
   const command = commands.get(name);
-  try { await command?.execute(msg, ...args); }
-  catch (error) {
-    msg.channel.send(`⚠ ${error?.message ?? 'Unknown error.'}`);
+  try {
+    await command?.execute(msg, ...args);
   }
-
-  return true;
+  catch (error) {
+    await msg.channel.send(`⚠ ${error?.message ?? 'Unknown error.'}`);
+  }
+  return command;
 }
 
 module.exports.handleCommand = handleCommand;
