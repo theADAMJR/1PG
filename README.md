@@ -1,28 +1,15 @@
-# 1PG
-1PG Course - https://udemy.com/course/create-the-best-discord-bot/?referralCode=5CB95A4D9309B1F54560
+# 1PG - Heroku
+This is the Heroku branch that uses a `.env` file instead of a `config.json`.
 
-Create a Discord Bot Dashboard Series - https://www.youtube.com/watch?v=tpIQM90o_pY&list=PLGfT2ttRbfizUIO1YEITWaquqBsNqHv7v&index=1
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/theADAMJR/1PG/tree/heroku)
 
-## Setup
+You could also use this branch to deploy, if you prefer `.env` to `config.json`, however it is only used for the video.
 
-Make a file `config.json`:
-```json
-{
-  "bot": {
-    "id": "<bot_id>",
-    "secret": "<client_secret>",
-    "token": "<bot_token>"
-  },
-  "dashboardURL": "http://localhost:3000",
-  "mongoURI": "mongodb://localhost/1PG-Demo"
-}
+## `.env`
+```js
+BOT_ID="<bot_id>"
+BOT_SECRET="<bot_secret>"
+BOT_TOKEN="<bot_token>"
+DASHBOARD_URL="http://localhost:3000"
+MONGO_URI="mongodb://localhost/1PG-Demo"
 ```
-
-### Make sure `config.json` is in `.gitignore`.
-This will help secure your bot token, and make sure your bot does not get hacked.
-
-## Set Redirect URIs
-+ http://localhost:3000/auth
-+ http://localhost:3000/auth-guild
-
-In the **[Developer Portal](https://discord.com/developers)** -> **Your Application** -> **OAuth2** 
