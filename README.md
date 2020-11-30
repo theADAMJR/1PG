@@ -12,4 +12,5 @@ BOT_SECRET="<bot_secret>"
 BOT_TOKEN="<bot_token>"
 DASHBOARD_URL="http://localhost:3000"
 MONGO_URI="mongodb://localhost/1PG-Demo"
+PORT=3000
 ```
