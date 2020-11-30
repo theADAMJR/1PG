@@ -21,8 +21,8 @@
       "value": ""
     },
     "DASHBOARD_URL": {
-      "description": "The Website URL [https://<heroku_app_name>/herokuapp.com]",    
-      "value": "https://<heroku_app_name>/herokuapp.com"
+      "description": "The Website URL [https://<heroku_app_name>.herokuapp.com]",    
+      "value": "https://<heroku_app_name>.herokuapp.com"
     },
     "MONGO_URI": {
       "description": "The MongoDB URI to your database [i.e. from MongoDB Atlas].",
