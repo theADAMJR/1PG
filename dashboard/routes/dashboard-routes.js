@@ -14,7 +14,8 @@ router.get('/servers/:id', validateGuild, updateMusicPlayer,
     savedGuild: await guilds.get(req.params.id),
     savedLog: await logs.get(req.params.id),
     users: bot.users.cache,
-    player: res.locals.player
+    player: res.locals.player,
+    key: res.cookies.get('key')
   }));
 
 router.put('/servers/:id/:module', validateGuild, async (req, res) => {
