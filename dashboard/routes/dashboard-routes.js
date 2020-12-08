@@ -1,5 +1,5 @@
 const express = require('express');
-const { validateGuild } = require('../modules/middleware');
+const { validateGuild, updateMusicPlayer } = require('../modules/middleware');
 const log = require('../modules/audit-logger');
 const guilds = require('../../data/guilds');
 const logs = require('../../data/logs');
@@ -9,11 +9,12 @@ const router = express.Router();
 
 router.get('/dashboard', (req, res) => res.render('dashboard/index'));
 
-router.get('/servers/:id', validateGuild,
+router.get('/servers/:id', validateGuild, updateMusicPlayer,
   async (req, res) => res.render('dashboard/show', {
     savedGuild: await guilds.get(req.params.id),
     savedLog: await logs.get(req.params.id),
-    users: bot.users.cache
+    users: bot.users.cache,
+    player: res.locals.player
   }));
 
 router.put('/servers/:id/:module', validateGuild, async (req, res) => {
