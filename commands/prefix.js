@@ -11,7 +11,7 @@ module.exports = class extends Command {
       return msg.channel.send(`Prefix is \`${savedGuild.general.prefix}\``);
 
     savedGuild.general.prefix = value;
-    await savedGuild.save();
+    await savedGuild.updateOne(savedGuild);
 
     return msg.channel.send(`Prefix is now \`${value}\``);
   }
