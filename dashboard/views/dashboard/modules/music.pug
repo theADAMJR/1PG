@@ -35,14 +35,4 @@ section#musicModule.module.container.px-5
           input.form-control
         button#trackSearch.ml-2.mb-1.btn.btn-gradient +
       .track-list
-        each track in player.q.items
-          .track.d-flex.justify-content-between
-            span
-              img.float-left.mr-3(src=track.thumbnail)
-              h5.mt-0 #{track.title}
-              p.lead #{track.author.name}
-            .float-right
-              span.text-muted #{track.duration.timestamp}
-              button.remove.btn.text-danger x
-        else
-          p No tracks here...
+      

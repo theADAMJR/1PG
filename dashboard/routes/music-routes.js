@@ -22,4 +22,12 @@ router.get('/stop', async (req, res) => {
   }
 });
 
+router.get('/list', async (req, res) => {
+  try {
+    res.json(res.locals.player.q.items);
+  } catch (error) {
+    sendError(res, error);
+  }
+});
+
 module.exports = router;

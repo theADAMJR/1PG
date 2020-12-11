@@ -2,6 +2,8 @@ class MusicWrapper {
   #endpoint = `/api/guilds/${guildId}/music`;
   #html = new HTMLMusicWrapper(this);
 
+  list = [];
+
   async #fetch(action) {
     try {
       const res = await fetch(`${this.#endpoint}/${action}`, {
@@ -28,6 +30,7 @@ class MusicWrapper {
   }
 
   async updateList() {
-    console.log('update list');
+    this.list = await this.#fetch('list');
+    this.#html.updateList();
   }
 }
