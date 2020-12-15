@@ -10,13 +10,26 @@ class HTMLMusicWrapper {
   }
   
   updateList() {
+    $('.now-playing').html(this.#nowPlaying());
+
     $('.track-list').html(
       (this.#music.list.length <= 0)
         ? '<p>No tracks here.</p>'
         : this.#music.list
-        .map(track => this.#htmlTrack(track))
+        .map(this.#htmlTrack)
         .join()
     );
+  }
+
+  #nowPlaying() {
+    if (this.#music.list.length <= 0) return ``;
+
+    const track = this.#music.list[0];
+    return `
+      <img class="float-left mr-3" src="${track.thumbnail}">
+      <h4>${track.title}</h4>
+      <p class="lead">${track.author.name}</p>
+    `;
   }
 
   #htmlTrack(track) {
