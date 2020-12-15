@@ -2,7 +2,11 @@ class HTMLMusicWrapper {
   #music;
 
   set apiError(error) {
-    console.log(error);
+    if (!error)
+      return $('#musicAPIError').addClass('d-none');
+      
+    $('#musicAPIError').removeClass('d-none');
+    $('#musicAPIError').text(error.message ?? 'Unknown error.');
   }
 
   constructor(musicClient) {

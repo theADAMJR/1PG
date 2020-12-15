@@ -16,16 +16,23 @@ class MusicWrapper {
       return json;
     } catch (error) {
       this.#html.apiError = error;
+      throw error;
     }
   }
 
   async play(query) {
-    await this.#fetch(`play?q=${query}`);
+    try {
+      await this.#fetch(`play?q=${query}`);
+      this.#html.apiError = null;
+    } catch {}
     await this.updateList();
   }
 
   async stop() {
-    await this.#fetch(`stop`);
+    try {
+      await this.#fetch(`stop`);
+      this.#html.apiError = null;
+    } catch {}
     await this.updateList();
   }
 
