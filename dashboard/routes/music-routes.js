@@ -30,4 +30,35 @@ router.get('/list', async (req, res) => {
   }
 });
 
+router.get('/remove', async (req, res) => {
+  try {
+    const index = +req.query.i;
+    res.locals.player.q.items.splice(index, 1);
+
+    res.json(res.locals.player.q.items);
+  } catch (error) {
+    sendError(res, error);
+  }
+});
+
+router.get('/shuffle', async (req, res) => {
+  try {
+    res.locals.player.q.shuffle();
+
+    res.json(res.locals.player.q.items);
+  } catch (error) {
+    sendError(res, error);
+  }
+});
+
+router.get('/skip', async (req, res) => {
+  try {
+    await res.locals.player.skip();
+
+    res.json(res.locals.player.q.items);
+  } catch (error) {
+    sendError(res, error);
+  }
+});
+
 module.exports = router;

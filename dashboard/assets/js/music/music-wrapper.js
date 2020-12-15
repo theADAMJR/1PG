@@ -36,8 +36,35 @@ class MusicWrapper {
     await this.updateList();
   }
 
-  async updateList() {
-    this.list = await this.#fetch('list');
+  async remove(index) {
+    try {
+      const list = await this.#fetch(`remove?i=${index}`);
+
+      this.#html.apiError = null;
+      await this.updateList(list);
+    } catch {}
+  }
+
+  async shuffle() {
+    try {
+      const list = await this.#fetch(`shuffle`);
+
+      this.#html.apiError = null;
+      await this.updateList(list);
+    } catch {}
+  }
+
+  async skip() {
+    try {
+      const list = await this.#fetch(`skip`);
+
+      this.#html.apiError = null;
+      await this.updateList(list);
+    } catch {}
+  }
+
+  async updateList(list = null) {
+    this.list = list ?? await this.#fetch('list');
     this.#html.updateList();
   }
 }

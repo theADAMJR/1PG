@@ -23,6 +23,11 @@ class HTMLMusicWrapper {
         .map(this.#htmlTrack)
         .join()
     );
+
+    $('.track .remove').on('click', async () => {
+      const index = $('.track .remove').index('.remove');
+      await this.#music.remove(index);
+    });
   }
 
   #nowPlaying() {
