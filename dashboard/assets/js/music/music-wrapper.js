@@ -2,7 +2,13 @@ class MusicWrapper {
   #endpoint = `/api/guilds/${guildId}/music`;
   #html = new HTMLMusicWrapper(this);
 
+  isPaused = $('#toggleTrack i').hasClass('fa-play');
   list = [];
+  position = +$('#seekTrack input').val();
+
+  get isPlaying() {
+    return this.list.length > 0;
+  }
 
   async #fetch(action) {
     try {
@@ -32,8 +38,42 @@ class MusicWrapper {
     try {
       await this.#fetch(`stop`);
       this.#html.apiError = null;
+      this.position = 0;
     } catch {}
     await this.updateList();
+  }
+
+  async toggle() {
+    try {
+      await this.#fetch(`toggle`);
+      this.#html.apiError = null;
+    } catch {}
+  }
+
+  async setVolume(value) {
+    try {
+      await this.#fetch(`volume?v=${value}`);
+      this.#html.apiError = null;
+    } catch {}
+  }
+
+  async seek(to) {
+    try {
+      await this.#fetch(`seek?to=${to}`);
+      this.position = to;
+
+      this.#html.apiError = null;
+    } catch {}
+  }
+
+  async toggle() {
+    try {
+      await this.#fetch(`toggle`);
+      this.isPaused = !this.isPaused;
+      
+      this.#html.apiError = null;
+      this.#html.toggle();
+    } catch {}
   }
 
   async remove(index) {
