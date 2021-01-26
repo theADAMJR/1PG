@@ -1,7 +1,7 @@
 const Event = require('./event');
 const { handleCommand } = require('../command-handler');
 const logs = require('../../data/logs');
-const users = require('../../data/users');
+const economy = require('../../modules/economy');
 
 module.exports = class extends Event {
   on = 'message';
@@ -12,9 +12,6 @@ module.exports = class extends Event {
       return await logs.add(msg.guild.id, 'commands');
     
     await logs.add(msg.guild.id, 'messages');
-
-    const savedUser = await users.get(msg.author.id);
-    savedUser.coins += 5;
-    await savedUser.save();
+    await economy.handleMessage(msg);
   }
 }
