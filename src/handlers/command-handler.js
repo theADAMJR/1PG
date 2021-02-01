@@ -17,18 +17,13 @@ export class CommandHandler {
 
   async handle(prefix, msg) {
     try {
-      const args = msg.content
+      const words = msg.content
         .slice(prefix.length)
-        .split(' ')
-        .slice(1);
-  
-      const name = msg.content
-        .slice(prefix.length)
-        .split(' ')[0];
+        .split(' ');
   
       await this.commands
-        .get(name)
-        ?.execute(msg, ...args);      
+        .get(words[0])
+        ?.execute(msg, ...words.slice(1));      
     } catch (error) {
       await msg.reply(`⚠️ ${error.message}`);
     }
