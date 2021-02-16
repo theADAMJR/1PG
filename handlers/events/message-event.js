@@ -7,6 +7,8 @@ module.exports = class extends Event {
   on = 'message';
   
   async invoke(msg) {
+    if (!msg.guild || msg.author.bot) return;
+
     const command = await handleCommand(msg);
     if (command)
       return await logs.add(msg.guild.id, 'commands');

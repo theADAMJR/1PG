@@ -5,14 +5,15 @@ module.exports = new class {
 
   async handleMessage(msg) {
     if (this.inCooldown(msg.author.id)) return;
-    this.handleCooldown(msg.author.id);
 
     const minLength = 5;
     if (msg.content.length < minLength) return;
 
     const savedUser = await users.get(msg.author.id);
     savedUser.coins += 5;
-    await savedUser.save();    
+    await savedUser.save();
+
+    this.handleCooldown(msg.author.id);
   }
 
   handleCooldown(userId) {
