@@ -25,7 +25,7 @@ router.get('/leaderboard/:id', async (req, res) => {
     return res.render('errors/404');
 
   const savedUsers = (await users.getInGuild(req.params.id))
-    .sort((a, b) => (a.coins > b.coins) ? 1 : -1)
+    .sort((a, b) => (a.coins < b.coins) ? 1 : -1)
     .slice(0, 100);
 
   res.render('dashboard/leaderboard', { guild, savedUsers });

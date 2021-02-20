@@ -13,6 +13,7 @@
   "dependencies": {
     "@2pg/music": "^1.1.6",
     "body-parser": "^1.19.0",
+    "canvacord": "^5.0.8",
     "cookies": "^0.8.0",
     "disco-oauth": "^4.2.7",
     "discord.js": "^12.2.0",
