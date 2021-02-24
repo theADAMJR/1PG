@@ -1,3 +1,6 @@
+import { config } from 'dotenv';
+config({ path: '.env' });
+
 import { Client } from 'discord.js';
 
 const bot = new Client();
@@ -9,4 +12,4 @@ bot.on('message', async (msg) => {
   await msg.reply('Hi');
 });
 
-bot.login('ODE0MjI0MjI4ODY1OTMzMzYy.YDavZw.ObHieu2X2DLiMeI2hpXjAv9uwOY');
+bot.login(process.env.BOT_TOKEN);
