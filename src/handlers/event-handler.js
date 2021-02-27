@@ -1,8 +1,7 @@
 import { readdirSync } from 'fs';
-import { bot } from '../bot.js';
 
 export class EventHandler {
-  async init() {
+  async init(bot) {
     const fileNames = readdirSync(`./src/handlers/events`);
     for (const fileName of fileNames) {
       const { default: Event } = await import(`./events/${fileName}`);
