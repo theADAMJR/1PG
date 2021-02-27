@@ -3,10 +3,10 @@ export class Deps {
 
   static get(type) {
     return this.#instances.get(type.name)
-      ?? this.add(new type());
+      ?? this.add(type, new type());
   }
 
-  static add(instance) {
+  static add(type, instance) {
     return this.#instances
       .set(type.name, instance)
       .get(type.name);
