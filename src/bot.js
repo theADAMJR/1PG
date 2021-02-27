@@ -15,4 +15,4 @@ mongoose.connect(process.env.MONGO_URI, {
 export const bot = new Client();
 bot.login(process.env.BOT_TOKEN);
 
-Deps.get(EventHandler).init();
+Deps.get(EventHandler).init(bot);
