@@ -3,12 +3,12 @@ export class Deps {
 
   static get(type) {
     return this.#instances.get(type.name)
-      ?? this.add(type);
+      ?? this.add(new type());
   }
 
-  static add(type) {
+  static add(instance) {
     return this.#instances
-      .set(type.name, new type())
+      .set(type.name, instance)
       .get(type.name);
   }  
 }
