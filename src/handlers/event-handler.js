@@ -11,5 +11,6 @@ export class EventHandler {
 
       bot.on(event.on, event.invoke.bind(event));
     }
+    console.log(`${fileNames.length - 1} events were loaded`);
   }
 }

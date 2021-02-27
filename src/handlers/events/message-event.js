@@ -1,11 +1,19 @@
 import Event from './event.js';
+import { CommandHandler } from '../command-handler.js';
 
 export default class extends Event {
   on = 'message';
 
+  constructor() {
+    super();
+    this.commandHandler = new CommandHandler();
+  }
+
   async invoke(msg) {
-    if (msg.author.bot) return;
+    if (!msg.guild || msg.author.bot) return;
   
-    await msg.reply('Hi');    
+    const prefix = '.';
+    if (msg.content.startsWith(prefix))
+      return this.commandHandler.handle(prefix, msg);
   }
 }
