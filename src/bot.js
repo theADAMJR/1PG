@@ -12,7 +12,7 @@ mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
 });
 
-export const bot = new Client();
+export const bot = Deps.get(Client);
 bot.login(process.env.BOT_TOKEN);
 
-Deps.get(EventHandler).init(bot);
+Deps.get(EventHandler).init();
