@@ -2,14 +2,10 @@ import { config } from 'dotenv';
 config({ path: '.env' });
 
 import { Client } from 'discord.js';
+import { EventHandler } from './handlers/event-handler.js';
 
-const bot = new Client();
+export const bot = new Client();
 
-bot.on('ready', () => console.log(`${bot.user.username} is online`));
-bot.on('message', async (msg) => {
-  if (msg.author.bot) return;
-
-  await msg.reply('Hi');
-});
+new EventHandler().init();
 
 bot.login(process.env.BOT_TOKEN);
