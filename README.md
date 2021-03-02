@@ -12,6 +12,7 @@ CLIENT_ID=""
 CLIENT_SECRET=""
 DASHBOARD_URL="http://localhost:3000"
 MONGO_URI="mongodb://localhost/1PG"
+PORT=3000
 ```
 
 ## Set Redirect URIs

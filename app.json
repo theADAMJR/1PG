@@ -1,0 +1,41 @@
+ 
+{
+  "name": "1PG - Simple Discord Bot",
+  "description": "Simple JavaScript Discord bot with dashboard.",
+  "keywords": [
+    "js discord bot",
+    "discord bot",
+    "1pg",
+    "javascript discord bot",
+    "discord.js bot",
+    "discord bot dashboard"
+  ],
+  "repository": "https://github.com/theADAMJR/6PG",
+  "env": {
+    "CLIENT_ID": {
+      "description": "Client ID from https://discord.com/developers.",    
+      "value": ""
+    },
+    "CLIENT_SECRET": {
+      "description": "Client Secret from https://discord.com/developers.",    
+      "value": ""
+    },
+    "DASHBOARD_URL": {
+      "description": "The Website URL [https://<heroku_app_name>.herokuapp.com]",    
+      "value": "https://<heroku_app_name>.herokuapp.com"
+    },
+    "MONGO_URI": {
+      "description": "The MongoDB URI to your database [i.e. from MongoDB Atlas].",
+      "value": "mongodb+srv://<username>:<password>@<hostname>/1PG?retryWrites=true&w=majority"
+    },
+    "PORT": {
+      "description": "Port for Heroku to use (default: 3000).",
+      "value": "3000"
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
