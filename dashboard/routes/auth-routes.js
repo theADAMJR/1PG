@@ -1,4 +1,3 @@
-const config = require('../../config.json');
 const express = require('express');
 const authClient = require('../modules/auth-client');
 const sessions = require('../modules/sessions');
@@ -6,10 +5,10 @@ const sessions = require('../modules/sessions');
 const router = express.Router();
 
 router.get('/invite', (req, res) =>
-  res.redirect(`https://discord.com/api/oauth2/authorize?client_id=${config.bot.id}&redirect_uri=${config.dashboardURL}/auth-guild&response_type=code&scope=bot`));
+  res.redirect(`https://discord.com/api/oauth2/authorize?client_id=${process.env.CLIENT_ID}&redirect_uri=${process.env.DASHBOARD_URL}/auth-guild&response_type=code&scope=bot`));
 
 router.get('/login', (req, res) =>
-  res.redirect(`https://discord.com/api/oauth2/authorize?client_id=${config.bot.id}&redirect_uri=${config.dashboardURL}/auth&response_type=code&scope=identify guilds&prompt=none`));
+  res.redirect(`https://discord.com/api/oauth2/authorize?client_id=${process.env.CLIENT_ID}&redirect_uri=${process.env.DASHBOARD_URL}/auth&response_type=code&scope=identify guilds&prompt=none`));
 
 router.get('/auth-guild', async (req, res) => {
   try {

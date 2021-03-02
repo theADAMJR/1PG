@@ -1,8 +1,7 @@
 const OAuthClient = require('disco-oauth');
-const config = require('../../config.json');
 
-const client = new OAuthClient(config.bot.id, config.bot.secret);
-client.setRedirect(`${config.dashboardURL}/auth`);
+const client = new OAuthClient(process.env.CLIENT_ID, process.env.CLIENT_SECRET);
+client.setRedirect(`${process.env.DASHBOARD_URL}/auth`);
 client.setScopes('identify', 'guilds');
 
 module.exports = client;
