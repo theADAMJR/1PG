@@ -1,3 +1,6 @@
+const { config } = require('dotenv');
+config({ path: '.env' });
+
 const { Client } = require('discord.js');
 const mongoose = require('mongoose');
 
