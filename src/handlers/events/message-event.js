@@ -4,7 +4,7 @@ import Deps from '../../utils/deps.js';
 import { Guilds } from '../../data/guilds.js';
 
 export default class extends Event {
-  on = 'message';
+  on = 'messageCreate';
 
   constructor() {
     super();
@@ -13,6 +13,7 @@ export default class extends Event {
   }
 
   async invoke(msg) {
+    console.log('we');
     if (!msg.guild || msg.author.bot) return;
   
     const savedGuild = await this.guilds.get(msg.guild.id);
