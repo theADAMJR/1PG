@@ -20,6 +20,10 @@
       "description": "Client Secret from https://discord.com/developers.",    
       "value": ""
     },
+   "token": {
+      "description": "Client Secret from https://discord.com/developers.",    
+      "value": ""
+    },
     "DASHBOARD_URL": {
       "description": "The Website URL [https://<heroku_app_name>.herokuapp.com]",    
       "value": "https://<heroku_app_name>.herokuapp.com"
