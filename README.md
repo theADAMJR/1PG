@@ -5,4 +5,8 @@ Create a Discord Bot Dashboard Series - https://www.youtube.com/watch?v=tpIQM90o
 
 ## [1PG Guide](https://help.codea.live/projects/1pg)
 
+> *UPDATE*: Consider using alternative platforms for deploying the bot maker, for the following reasons.
+> 1) Heroku is no longer free, and this is now an unpaid advertisement.
+> 2) discord.js made many breaking changes to their API, which may cause some features to not work.
+
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/theADAMJR/1PG/tree/heroku)
