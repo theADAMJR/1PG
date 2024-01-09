@@ -16,6 +16,10 @@
       "description": "Client ID from https://discord.com/developers.",    
       "value": ""
     },
+   "token": {
+      "description": "Client token from https://discord.com/developers.",    
+      "value": ""
+    },
     "CLIENT_SECRET": {
       "description": "Client Secret from https://discord.com/developers.",    
       "value": ""
